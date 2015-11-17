@@ -1,7 +1,8 @@
 import React, { PropTypes, Component } from 'react';
+import styles from './Footer.css';
 
 class Footer extends Component {
-  render() {
+  render () {
     return (
       <footer className="Footer">
         <span>shredder footer splaceholder text</span>

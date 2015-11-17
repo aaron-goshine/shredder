@@ -1,9 +1,9 @@
 'use strict';
 
-var babel = require('babel-core');
+var babel = require('babel');
 
 module.exports = {
-  process: function(src, filename) {
+  process: function (src, filename) {
     if (!babel.canCompile(filename)) {
       return '';
     }

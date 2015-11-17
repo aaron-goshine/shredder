@@ -6,16 +6,8 @@ var config = {
     filename: 'app.js'
   },
   module: {
-    loaders: [{
-      test: /\.js?$/,
-      loader: 'babel'
-    },
-    {
-      test: /\.(scss|css)$/,
-      loader: 'style!css!sass'
-    }
-    ]
-
+    loaders: [{ test: /\.js?$/, loader: 'babel' },
+    { test: /\.(scss|css)$/, loader: 'style!css!sass'}]
   }
 };
 

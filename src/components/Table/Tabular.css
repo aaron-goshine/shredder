@@ -1,1 +1,25 @@
-.Tabular { }
+.Tabular { 
+    margin: 1em;
+    width: calc(100% - 2em);
+}
+
+
+table {
+    border-collapse: collapse;
+}
+
+table, th, td {
+    border: 1px solid lightgray;
+}
+
+table {
+    width: 100%;
+    background-color: white;
+    color: gray;
+}
+
+th, td {
+    vertical-align: bottom;
+    padding: 0.5em;
+    text-align: left;
+}
