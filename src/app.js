@@ -20,7 +20,6 @@ class App extends Component {
   componentDidMount () {
     AppStore.addChangeListener(this.change.bind(this));
   }
-
   componentWillUnmount () {
     AppStore.removeChangeListener(this.Change.bind(this));
   }
@@ -28,7 +27,6 @@ class App extends Component {
     this.setState(AppStore.getState());
   }
   render () {
-    console.log(this.state.message.cssClass);
     return (
       <div className="main">
         <Header/>
