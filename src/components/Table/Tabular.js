@@ -1,10 +1,33 @@
+/**
+ * Welcome to the @Tabular componet
+ * @TODO need further implementation to accommodate
+ **/
+
 import React, { PropTypes, Component } from 'react';
 import styles from './Tabular.css';
 
 class Tabular extends Component {
+
+  /**
+   *
+   * retrieve and sort the the categories which in this case are
+   * represented by the first characters of the the words
+   * they represent.
+   *
+   **/
+
   getSortedCategories () {
     return Object.keys(this.props.model).sort();
   }
+
+  /**
+   *
+   * Read this funtion carefully this where I
+   * generate the data matrix that is used to render the table
+   * @TODO needs refactoring was done in half and hour
+   * will revisit.
+   *
+   **/
 
   generateMatrix () {
     let categories = this.getSortedCategories();
@@ -29,6 +52,13 @@ class Tabular extends Component {
     return matrix;
   }
 
+  /**
+   *
+   * Here we are rendering he data matrix to display
+   * markup
+   *
+   **/
+
   renderMatrix () {
     return this.generateMatrix().map((y, i) => {
       return (<tr key={i + 'y'}>{
@@ -38,6 +68,13 @@ class Tabular extends Component {
       }</tr>);
     });
   }
+  /**
+   *
+   * Here we are rendering the categorie header whis is currently
+   * the first letter of the words it represent to markup
+   *
+   **/
+
   renderMatrixHeaders () {
     return this.getSortedCategories().map((cat) => {
       return (<th key={cat}> {cat} </th>);

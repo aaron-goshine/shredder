@@ -1,3 +1,9 @@
+/**
+ * Button componet
+ * Only two attributes / properties are required, which are these:
+ * @ onClick
+ * @ label
+ **/
 
 import React, { PropTypes, Component } from 'react';
 import styles from './Button.css';
@@ -14,7 +20,8 @@ class Button extends Component {
   }
 }
 Button.propTypes = {
-  onClick: PropTypes.func.isRequired
+  onClick: PropTypes.func.isRequired,
+  label: PropTypes.string.isRequired
 };
 
 export default Button;

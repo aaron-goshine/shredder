@@ -89,9 +89,9 @@ AppDispatcher.register(function (payload) {
   let action = payload.action;
   let text = payload.text.trim();
 
-  switch (action.actionType) {
-    case ActionTypes.SHREDD_TEXT:
-      setMessage('success', 'Please shredd something, thanks');
+  switch (action) {
+    case ActionTypes.TEXT_TO_SHREDD:
+
       if (containsNumbers(text)) {
         setMessage('error', 'only words are allowed');
       }
@@ -103,13 +103,29 @@ AppDispatcher.register(function (payload) {
         } else {
           setMessage('error', 'minimum 5 word maximum 500 word thanks');
         }
-        AppStore.emitChange();
+        setMessage('success', 'you have successful shred your supplied text, please check table bellow to for results');
       }
+
+      AppStore.emitChange();
+
       break;
 
-    case ActionTypes.TEXT_CHANGE:
-      // TODO implement validation on field change
+    case ActionTypes.TEXT_CHANGED:
+      if (containsNumbers(text)) {
+        setMessage('error', 'only words are allowed');
+      }
+
+      if (text !== '') {
+        let wordCount = extractWords(text).length;
+        if (wordCount >= 5 && wordCount <= 500) {
+          setMessage('success', 'Yes you are free to go ahead and shreddit');
+        } else {
+          setMessage('error', 'minimum 5 word maximum 500 word thanks');
+        }
+      }
+
       AppStore.emitChange();
+
       break;
   }
   return true;

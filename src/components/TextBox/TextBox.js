@@ -1,3 +1,9 @@
+/**
+ * TextBox componet
+ * Only two attributes / properties are required, which are these:
+ * @ rows
+ * @ onChange
+ **/
 
 import React, { PropTypes, Component } from 'react';
 import styles from './TextBox.css';

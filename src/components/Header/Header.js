@@ -1,3 +1,10 @@
+
+/**
+ * Header componet
+ * @TODO need further implementation to accommodate
+ * dynamic content  via a @content attribute
+ **/
+
 import React, { Component } from 'react';
 import styles from './Header.css';
 

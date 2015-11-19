@@ -1,49 +1,61 @@
 @import'../node_modules/normalize.css/normalize';
 /*
  * Colors
- * ======================================================================== */
+ **/
 
-$white-base:           hsl(255, 255, 255);
-$gray-darker:          #222; 
-$gray-dark:            #404040;
-$gray:                 #555 ;
-$gray-light:           #777 ;
-$gray-lighter:         #eee ;
+
+$white-base:     hsl(255, 255, 255);
+$gray-darker:    #222; 
+$gray-dark:      #404040;
+$gray:           #555 ;
+$gray-light:     #777 ;
+$gray-lighter:   #eee ;
+$error-bg:       pink ;
+$error:          red ;
+$success-bg:     lightgreen ;
+$success:        green ;
+$sky-bg:         #b3d4fc;
 
 /*
  * Typography
- * ======================================================================== */
-
+ *
+ **/
 $font-family-base:    HelveticaNeue-Light, sans-serif;
 
 /*
  * Layout
- * ======================================================================== */
+ *
+ **/
 
 $max-content-width:     1000px;
 
 /*
  * Media queries breakpoints
- * ======================================================================== */
+ *
+ **/
 
-$screen-xs-min:         480px;  /* Extra small screen / phone */
-$screen-sm-min:         768px;  /* Small screen / tablet */
-$screen-md-min:         992px;  /* Medium screen / desktop */
-$screen-lg-min:         1200px; /* Large screen / wide desktop */
+
+$screen-xs-min:  480px;  /* Extra small screen / phone */
+$screen-sm-min:  768px;  /* Small screen / tablet */
+$screen-md-min:  992px;  /* Medium screen / desktop */
+$screen-lg-min:  1200px; /* Large screen / wide desktop */
 
 /*
  * Animations
- * ======================================================================== */
+ *
+ **/
 
 $animation-swift-out:   .45s cubic-bezier(0.3, 1, 0.4, 1) 0s;
 
 
 /*
  * Base styles
- * ========================================================================== */
+ *
+ * */
+
 
 html {
-    color: #222;
+    color: $gray-darker;
     font-weight: 100;
     font-size: 1em; /* ~16px; */
     font-family: $font-family-base;
@@ -51,26 +63,13 @@ html {
 }
 
 ::-moz-selection {
-    background: #b3d4fc;
+    background: $sky-bg;
     text-shadow: none;
 }
 
 ::selection {
-    background: #b3d4fc;
+    background: $sky-bg;
     text-shadow: none;
-}
-
-/*
- * A better looking default horizontal rule
- */
-
-hr {
-    display: block;
-    height: 1px;
-    border: 0;
-    border-top: 1px solid #ccc;
-    margin: 1em 0;
-    padding: 0;
 }
 
 .container {
@@ -85,12 +84,12 @@ hr {
 
 .error {
     padding: 1em;
-    color:red;
-    background-color: pink;
+    color:$error;
+    background-color: $error-bg;
 }
 
 .success {
     padding: 1em;
-    color:green;
-    background-color: lightgreen;
+    color:$success;
+    background-color: $success-bg;
 }
